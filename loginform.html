@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+<style type="text/css">
+	
+
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+.login {
+  background-color: #eff0f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  padding: 40px;
+}
+
+.login-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.login-content__left {
+  border-radius: 52% 48% 33% 67%/38% 45% 55% 62%;
+  box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.05), 25px 35px 20px rgba(0, 0, 0, 0.05), 25px 30px 30px rgba(0, 0, 0, 0.05), inset -20px -20px 25px rgba(255, 255, 255, 0.9);
+  transition: all ease 0.5s;
+  position: relative;
+}
+.login-content__left:hover {
+  border-radius: 50%;
+}
+.login-content__left:hover::before {
+  transform: skew(0deg, 0deg) translate(50%, 10%);
+}
+.login-content__left:hover::after {
+  transform: skew(0deg, 0deg) translate(50%, 10%);
+}
+.login-content__left::before {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  width: 5%;
+  height: 0;
+  padding-bottom: 5%;
+  left: 25%;
+  top: 25%;
+  transform: skew(10deg, 0deg);
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: all ease 0.5s;
+}
+.login-content__left::after {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  width: 10%;
+  height: 0;
+  padding-bottom: 10%;
+  left: 15%;
+  top: 15%;
+  transform: skew(10deg, 0deg);
+  border-radius: 50%;
+  opacity: 0.9;
+  transition: all ease 0.5s;
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 80px 60px;
+}
+.login-box h2 {
+  color: #333;
+}
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+input[type=text] {
+  background-color: transparent;
+  outline: none;
+  color: #333;
+  font-weight: 550;
+}
+input[type=text]::-moz-placeholder {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.3);
+}
+input[type=text]:-ms-input-placeholder {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.3);
+}
+input[type=text]::placeholder {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.3);
+}
+input[type=text]::-moz-selection {
+  color: #fff;
+  background-color: #ff0f5b;
+}
+input[type=text]::selection {
+  color: #fff;
+  background-color: #ff0f5b;
+}
+
+.login-box__input-box {
+  border-radius: 25px;
+  box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.05), 15px 10px 15px rgba(0, 0, 0, 0.025);
+  width: 225px;
+  overflow: hidden;
+}
+.login-box__input-box input {
+  font-size: 16px;
+  padding: 10px 15px;
+  width: 100%;
+}
+.login-box__input-box input[type=text] {
+  box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.1), inset -2px -5px 10px #fff;
+}
+.login-box__input-box input[type=submit] {
+  background-color: #ff0f5b;
+  color: #fff;
+  box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.1), 15px 15px 10px rgba(0, 0, 0, 0.05), 15px 10px 15px rgba(0, 0, 0, 0.025);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.login-box__input-box.btn {
+  width: 120px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.login-box__input-box.btn::before {
+  content: "→";
+  color: #fff;
+  font-weight: 550;
+  font-family: FontAwesome;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 28px;
+  border-radius: 50%;
+  transform: translateX(-30%);
+  transform-origin: right center;
+  transition: all 0.25s ease;
+  opacity: 0;
+}
+.login-box__input-box.btn:hover::before {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.login-content__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.satelite-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 550;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  position: relative;
+}
+.satelite-btn::before {
+  content: "";
+  width: 14%;
+  height: 0;
+  padding-bottom: 12%;
+  background-color: #fff;
+  opacity: 0.5;
+  position: absolute;
+  top: 20%;
+  left: 24%;
+  border-radius: 50%;
+  transform: skew(-10deg, 0deg);
+  transition: all 0.35s ease;
+}
+.satelite-btn:hover {
+  border-radius: 50%;
+}
+.satelite-btn:hover::before {
+  padding-bottom: 14%;
+  left: 20%;
+}
+
+.signup-btn {
+  background-color: #01b4ff;
+  border-radius: 49% 51% 52% 48%/63% 59% 41% 37%;
+  box-shadow: inset 10px 10px 10px rgba(1, 180, 255, 0.05), 25px 35px 20px rgba(1, 180, 255, 0.1), 25px 30px 30px rgba(1, 180, 255, 0.1), inset -10px -10px 15px rgba(255, 255, 255, 0.5);
+  height: 80px;
+  width: 80px;
+  align-self: flex-end;
+}
+
+.forget-btn {
+  background-color: #c61dff;
+  border-radius: 44% 56% 65% 35%/57% 58% 42% 43%;
+  box-shadow: inset 10px 10px 10px rgba(190, 1, 254, 0.05), 25px 35px 20px rgba(190, 1, 254, 0.1), 25px 30px 30px rgba(190, 1, 254, 0.1), inset -10px -10px 15px rgba(255, 255, 255, 0.5);
+  width: 120px;
+  height: 120px;
+}
+
+
+
+
+
+
+
+
+</style>
+
+
+
+</head>
+<body>
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - water-drop login page</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="login">
+  <div class="login-content">
+    <div class="login-content__left">
+      <div class="login-box">
+        <h1>Sign in</h1>
+        <form>
+          <div class="login-box__input-box">
+            <input type="text" placeholder="Username">
+          </div>
+          <div class="login-box__input-box">
+            <input type="text" placeholder="Password">
+          </div>
+          <div class="login-box__input-box btn">
+            <input type="submit" value="Login">
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="login-content__right">
+      <h3>prabhu maurya</h3>
+
+      <div class="satelite-btn signup-btn">
+        <span>Sign up</span>
+      </div>
+      <div class="satelite-btn forget-btn">
+        <span>Forget</span>
+        <span>Password</span>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  
+</body>
+</html>
+
+</body>
+</html>
